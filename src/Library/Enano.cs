@@ -4,34 +4,23 @@ using System.Text;
 
 namespace Program
 {
-    public class Mago
+    public class Enano
     {
-        public Mago(string nombre)
+        public Enano(string nombre)
         {
             this.Nombre = nombre;
-            this.Vida = 120;
-            this.Defensa = 40;
-            this.Ataque = 10;
+            this.Vida = 200;
+            this.Defensa = 60;
+            this.Ataque = 90;
             this.Resistencia = 60;
-            this.Magia = 100;
-            this.Vida1 = 120;
-            
-            
-        }
-        public ArrayList LibroHechizos = new ArrayList();
-        public double LibroHechizosPoder()
-        {
-            double poderHechizo = 30;
-            foreach (string hechizo in LibroHechizos)
-            {
-                poderHechizo += 5;
-            }
-            return poderHechizo;
+            this.Magia = 0;
+            this.Vida1 = 200;
         }
         
         private double vida ;
         private double armadura ;
         private Item mano1;
+        private Item mano2;
         private Item casco;
         private Item chaleco;
         private Item botas;
@@ -86,13 +75,26 @@ namespace Program
                 this.Magia += value.Magia;
             }
         }
-        //public Item Mano2 {get; set;}
+        public Item Mano2 
+        {
+            get
+            {
+                return this.mano2;
+            }
+            set
+            {
+                this.mano2 = value;
+                this.Ataque += value.Ataque;
+                this.Defensa += value.Defensa;
+                this.Magia += value.Magia;
+            }
+        }
         
         public double Defensa {get; set;}
         public double Ataque {get;set;}
         public string Nombre {get;set;}
         public double Resistencia {get; set;}
-        public double Vida1 = 120;
+        public double Vida1 = 200;
         
         public double Armadura
         {
@@ -120,7 +122,7 @@ namespace Program
         
         public double AtaqueTotal() 
         {
-            double ataqueTotal = this.Ataque + this.Mano1.Ataque + this.LibroHechizosPoder();
+            double ataqueTotal = this.Ataque ;
             return ataqueTotal;
         }
         public double DefensaTotal()
@@ -148,23 +150,6 @@ namespace Program
             this.Magia -= 15;
             otro_pj.Vida -= this.AtaqueTotal();
             
-        }
-        public void EstudiarHechizo(string hechizo)
-        {
-            this.LibroHechizos.Add(hechizo);
-        }
-        public void OlvidarHechizo(string hechizo)
-        {
-            this.LibroHechizos.Remove(hechizo);
-        }
-        public string VerLibroHechizos()
-        {
-            StringBuilder text = new StringBuilder("Los hechizos que contiene el libro son:\n");
-            foreach (string hechizo in LibroHechizos)
-            {
-                text.Append($"- {hechizo}\n");
-            }
-            return text.ToString().TrimEnd();
         }
         public void AddCasco(Item casco)
         {
@@ -202,17 +187,29 @@ namespace Program
         {
             this.Botas = botas;
         }
-        public void AddMano1(Item baculo)
+        public void AddMano1(Item arma)
         {
-            this.Mano1 = baculo;
+            this.Mano1 = arma;
         }
         public void RemoveMano1()
         {
             this.Mano1 = new Item("",0,0,0);
         }
-        public void ChangeMano1 (Item baculo)
+        public void ChangeMano1 (Item arma)
         {
-            this.Mano1 = baculo;
+            this.Mano1 = arma;
+        }
+        public void AddMano2(Item escudo)
+        {
+            this.Mano1 = escudo;
+        }
+        public void RemoveMano2()
+        {
+            this.Mano1 = new Item("",0,0,0);
+        }
+        public void ChangeMano2 (Item escudo)
+        {
+            this.Mano1 = escudo;
         }
 
 

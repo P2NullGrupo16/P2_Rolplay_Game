@@ -4,7 +4,7 @@ namespace Program
 {
     public class Item
     {
-        public Item(string nombre, int ataque, int defensa, int magia)
+        public Item(string nombre, double ataque, double defensa, double magia)
         {
             this.Nombre = nombre;
             this.Ataque = ataque;
@@ -13,8 +13,13 @@ namespace Program
         }
 
         public string Nombre {get;set;}
-        public int Ataque {get; set;}
-        public int Defensa {get;set;}
-        public int Magia {get; set;}
+        public double Ataque {get; set;}
+        public double Defensa {get;set;}
+        public double Magia {get; set;}
+        public string GetItem()
+        {
+            string texto = $"Esto es un {this.Nombre}, tiene un ataque de {this.Ataque} y de defensa {this.Defensa}, cuenta con {this.Magia} puntos de magia.";
+            return texto;
+        }
     }
 }
