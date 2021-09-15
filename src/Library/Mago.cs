@@ -15,8 +15,7 @@ namespace Program
             this.Resistencia = 60;
             this.Magia = 100;
             this.Vida1 = 120;
-            this.xAtaqueTotal = this.Ataque + this.LibroHechizosPoder(); //ag
-            this.xDefensaTotal = this.Defensa; //ag
+            
             
             
         }
@@ -127,7 +126,7 @@ namespace Program
         }
         public double DefensaTotal()
         {
-            double defensaTotal = this.Defensa + this.Mano1.Defensa +  this.Armadura; //Da 80 cuando se tiene 40 base +30 agregegados
+            double defensaTotal = this.Defensa + this.Mano1.Defensa +  this.Armadura; 
             return defensaTotal;            
         }
         public void AtacarMago(Mago otro_pj)
@@ -217,61 +216,7 @@ namespace Program
             this.Mano1 = baculo;
         }
 
-        //Cambios abajo
-
-        ArrayList ItemsEquipados = new ArrayList();
-
-
-
-        public double xDefensaTotal{get; set;}
        
-        public double xAtaqueTotal{get; set;}
-      
-
-        /*Haciendo  un AddItem o RemoveItem de un array con items, lo que se logra es poder 
-        hacerlo de tal forma que no se repita tanto el código, por que en realidad no necesitamos saber donde se equipan
-        esos items, ni hay condiciones de momento, por ende para hacer más sencillo el tema, veo mejor hacer un array que
-        contega los items que se le agregan, y cuando se agrega el item, directamente agregar a una Property ya sea DefensaTotal o AtaqueTotal
-        su valor base correspondiente + el valor sumado por el item. De forma de no tener que estar llamando a un método por ejemplo "getAtaqueTotal"
-        cada vez que vayamos a atacar, sino que se podría usar el valor que contiene la Property.
-        */
-
-        public void AddItem(Item ItemParaEquipar)
-        {
-            ItemsEquipados.Add(ItemParaEquipar);
-            xDefensaTotal += ItemParaEquipar.Defensa;
-            xAtaqueTotal += ItemParaEquipar.Ataque;
-        }
-
-        public void RemoveItem(Item ItemParaRemover)
-        {
-            ItemsEquipados.Remove(ItemParaRemover);
-            xDefensaTotal -= ItemParaRemover.Defensa;
-            xAtaqueTotal -= ItemParaRemover.Ataque;
-        }
-
-
-        public void xAtacarMago(Mago otro_pj)
-        {   
-            this.Resistencia -= 10;
-            this.Magia -= 15;
-            otro_pj.Vida -= xAtaqueTotal;
-            
-        }
-        public void xAtacarEnano(Enano otro_pj)
-        {   
-            this.Resistencia -= 10;
-            this.Magia -= 15;
-            otro_pj.Vida -= xAtaqueTotal;
-            
-        }
-        public void xAtacarElfo(Elfo otro_pj)
-        {   
-            this.Resistencia -= 10;
-            this.Magia -= 15;
-            otro_pj.Vida -= xAtaqueTotal;
-            
-        }
 
         
 
