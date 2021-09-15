@@ -13,7 +13,7 @@ namespace Program
         item Botas = new Item("Grebas de Berserker"10, 10, 40);
         item Guantes = new Item("Guanteletes de Fuego", 40, 5, 0);
         item Guantes = new Item("Vendas de Tela", 35, 10, 5);
-        mago mago1 = new Mago("Ryze", 500, 0, 10)
+        mago mago1 = new Mago("Ryze") 
         
         }
     }
