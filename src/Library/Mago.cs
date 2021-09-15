@@ -17,6 +17,9 @@ namespace Program
             this.Vida1 = 120;
             
             
+PieroSaucedo
+            
+master
         }
         public ArrayList LibroHechizos = new ArrayList();
         public double LibroHechizosPoder()
@@ -125,7 +128,9 @@ namespace Program
         }
         public double DefensaTotal()
         {
+PieroSaucedo
             double defensaTotal = this.Defensa + this.Mano1.Defensa +  this.Armadura;
+master
             return defensaTotal;            
         }
         public void AtacarMago(Mago otro_pj)
@@ -215,6 +220,9 @@ namespace Program
             this.Mano1 = baculo;
         }
 
+PieroSaucedo
+
+master
 
 
 
