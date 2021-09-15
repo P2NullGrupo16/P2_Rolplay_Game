@@ -7,6 +7,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
+ JoaquínPérez
             Mago pj1 = new Mago("Juan");
             Item gorro = new Item("Gorro magico", 0, 20,0 );
             Item baculo = new Item("Baculo", 10,10,10);
@@ -54,7 +55,13 @@ namespace Program
             pj33.Addmano2(Martillo);
             pj33.AddCasco(cuernos);
             
-        }
+        
+
+            Item EscudoGrande = new Item("Escudo grande", 0, 100, 0);
+            Item EspadaMortal = new Item("Espada mortal", 45, 0, 0);
+            Item BotasLentas = new Item("Botas lentas", 0, 10, 0);
+            Enano PersonajeEnano1 = new Enano("Lebron James");
+ master
 
         }
     }

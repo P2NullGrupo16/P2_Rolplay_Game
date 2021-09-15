@@ -17,6 +17,10 @@ namespace Program
             this.Vida1 = 120;
             
             
+<<<<<<< HEAD
+=======
+            
+>>>>>>> fea25ea75fa87053c2fbf09c762a0b001fea34a6
         }
         public ArrayList LibroHechizos = new ArrayList();
         public double LibroHechizosPoder()
@@ -125,7 +129,11 @@ namespace Program
         }
         public double DefensaTotal()
         {
+<<<<<<< HEAD
             double defensaTotal = this.Defensa + this.Mano1.Defensa +  this.Armadura;
+=======
+            double defensaTotal = this.Defensa + this.Mano1.Defensa +  this.Armadura; 
+>>>>>>> fea25ea75fa87053c2fbf09c762a0b001fea34a6
             return defensaTotal;            
         }
         public void AtacarMago(Mago otro_pj)
@@ -215,6 +223,14 @@ namespace Program
             this.Mano1 = baculo;
         }
 
+<<<<<<< HEAD
+=======
+       
+
+        
+
+
+>>>>>>> fea25ea75fa87053c2fbf09c762a0b001fea34a6
 
 
 
