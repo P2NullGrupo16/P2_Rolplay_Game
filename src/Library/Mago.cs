@@ -16,7 +16,6 @@ namespace Program
             this.Magia = 100;
             this.Vida1 = 120;
             
-            
         }
         public ArrayList LibroHechizos = new ArrayList();
         public double LibroHechizosPoder()
@@ -87,7 +86,7 @@ namespace Program
             }
         }
         //public Item Mano2 {get; set;}   El mago, no tiene habilitada esta mano, ya que tiene el libro de hechizos
-        
+
         public double Defensa {get; set;}
         public double Ataque {get;set;}
         public string Nombre {get;set;}
@@ -117,8 +116,7 @@ namespace Program
                 this.vida = value;
             }
         }
-        
-        
+
         public double AtaqueTotal() 
         {
             double ataqueTotal = this.Ataque + this.LibroHechizosPoder();
@@ -142,7 +140,6 @@ namespace Program
             this.Magia -= 15;
             otro_pj.Vida -= this.AtaqueTotal();
             Console.WriteLine($"Se restaron {this.AtaqueTotal()} puntos a la vida de {otro_pj.Nombre}");
-            
         }
         public void AtacarElfo(Elfo otro_pj)
         {   
@@ -216,6 +213,7 @@ namespace Program
         }
         public void RemoveBotas()
         {
+
             if (!(this.Botas.Nombre == ""))
             {
                 this.Defensa -= this.Botas.Defensa;
@@ -254,9 +252,5 @@ namespace Program
             this.RemoveMano1();
             this.Mano1 = armaNuevo;
         }
-
-
-
-
     }
 }
