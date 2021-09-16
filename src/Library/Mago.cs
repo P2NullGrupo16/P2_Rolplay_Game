@@ -83,16 +83,17 @@ namespace Program
                 this.mano1 = value;
                 this.Magia += value.Magia;
                 this.Defensa += value.Defensa;
-                this.Magia += value.Magia;
+                this.Ataque += value.Ataque;
             }
         }
-        //public Item Mano2 {get; set;}
+        //public Item Mano2 {get; set;}   El mago, no tiene habilitada esta mano, ya que tiene el libro de hechizos
         
         public double Defensa {get; set;}
         public double Ataque {get;set;}
         public string Nombre {get;set;}
         public double Resistencia {get; set;}
         public double Vida1 = 120;
+        public double Magia {get;set;}
         
         public double Armadura
         {
@@ -116,16 +117,16 @@ namespace Program
                 this.vida = value;
             }
         }
-        public double Magia {get;set;}
+        
         
         public double AtaqueTotal() 
         {
-            double ataqueTotal = this.Ataque + this.Mano1.Ataque + this.LibroHechizosPoder();
+            double ataqueTotal = this.Ataque + this.LibroHechizosPoder();
             return ataqueTotal;
         }
         public double DefensaTotal()
         {
-            double defensaTotal = this.Defensa + this.Mano1.Defensa +  this.Armadura;
+            double defensaTotal = this.Defensa +  this.Armadura;
             return defensaTotal;            
         }
         public void AtacarMago(Mago otro_pj)
@@ -133,13 +134,14 @@ namespace Program
             this.Resistencia -= 10;
             this.Magia -= 15;
             otro_pj.Vida -= this.AtaqueTotal();
-            
+            Console.WriteLine($"Se restaron {this.AtaqueTotal()} puntos a la vida de {otro_pj.Nombre}");
         }
         public void AtacarEnano(Enano otro_pj)
         {   
             this.Resistencia -= 10;
             this.Magia -= 15;
             otro_pj.Vida -= this.AtaqueTotal();
+            Console.WriteLine($"Se restaron {this.AtaqueTotal()} puntos a la vida de {otro_pj.Nombre}");
             
         }
         public void AtacarElfo(Elfo otro_pj)
@@ -147,7 +149,7 @@ namespace Program
             this.Resistencia -= 10;
             this.Magia -= 15;
             otro_pj.Vida -= this.AtaqueTotal();
-            
+            Console.WriteLine($"Se restaron {this.AtaqueTotal()} puntos a la vida de {otro_pj.Nombre}");
         }
         public void EstudiarHechizo(string hechizo)
         {
@@ -172,10 +174,19 @@ namespace Program
         }
         public void RemoveCasco()
         {
-            this.Casco = new Item("",0,0,0);
+            if (!(this.Casco.Nombre == ""))
+            {
+                this.Defensa -= this.Casco.Defensa;
+                this.Casco = new Item("",0,0,0);
+            }
+            else
+            {
+                Console.WriteLine("No tiene objeto equipado en Casco");
+            }
         }
         public void ChangeCasco (Item casco)
         {
+            this.RemoveCasco();
             this.Casco = casco;
         }
         public void AddChaleco(Item chaleco)
@@ -184,10 +195,19 @@ namespace Program
         }
         public void RemoveChaleco()
         {
-            this.Chaleco = new Item("",0,0,0);
+            if (!(this.Chaleco.Nombre == ""))
+            {
+                this.Defensa -= this.Chaleco.Defensa;
+                this.Chaleco = new Item("",0,0,0);
+            }
+            else
+            {
+                Console.WriteLine("No tiene objeto equipado en Chaleco");
+            }
         }
         public void ChangeChaleco (Item chaleco)
         {
+            this.RemoveChaleco();
             this.Chaleco = chaleco;
         }
         public void AddBotas(Item botas)
@@ -196,10 +216,19 @@ namespace Program
         }
         public void RemoveBotas()
         {
-            this.Botas = new Item("",0,0,0);
+            if (!(this.Botas.Nombre == ""))
+            {
+                this.Defensa -= this.Botas.Defensa;
+                this.Botas = new Item("",0,0,0);
+            }
+            else
+            {
+                Console.WriteLine("No tiene objeto equipado en Botas");
+            }
         }
         public void ChangeBotas (Item botas)
         {
+            this.RemoveBotas();
             this.Botas = botas;
         }
         public void AddMano1(Item baculo)
@@ -208,11 +237,22 @@ namespace Program
         }
         public void RemoveMano1()
         {
-            this.Mano1 = new Item("",0,0,0);
+            if (!(this.Mano1.Nombre == ""))
+            {
+                this.Magia -= this.Mano1.Magia;
+                this.Defensa -= this.Mano1.Defensa;
+                this.Ataque -= this.Mano1.Ataque;
+                this.Mano1 = new Item("",0,0,0);
+            }
+            else
+            {
+                Console.WriteLine("No tiene objeto equipado en Mano1");
+            }
         }
-        public void ChangeMano1 (Item baculo)
+        public void ChangeMano1 (Item armaNuevo)
         {
-            this.Mano1 = baculo;
+            this.RemoveMano1();
+            this.Mano1 = armaNuevo;
         }
 
 
