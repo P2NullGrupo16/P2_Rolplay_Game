@@ -45,6 +45,38 @@ namespace Program
             
         }
 
+
+        [Test]
+        public void TestAtaqueTotalEnano() // Comprueba que el ataque total de un enano sea la suma del ataque de sus items equipados + su ataque base.
+        {
+            Enano Lebroncito = new Enano("Lebron Jr");
+            Item EspadaCorta = new Item("Espada corta", 20, 0, 0);
+            Lebroncito.AddMano1(EspadaCorta);
+            double expected = 90 + EspadaCorta.Ataque;
+            Assert.AreEqual(expected, Lebroncito.AtaqueTotal());    
+        }
+
+        [Test]
+        public void TestAtaqueTotalElfo() // Comprueba que el ataque total de un elfo sea la suma del ataque de sus items equipados + su ataque base.
+        {
+            Elfo ElFitoPaez = new Elfo("Elfito Paez");
+            Item EspadaLarga = new Item("Espada larga", 30, 0, 0);
+            ElFitoPaez.AddMano1(EspadaLarga);
+            double expected = 70 + EspadaLarga.Ataque;
+            Assert.AreEqual(expected, ElFitoPaez.AtaqueTotal());    
+        }
+
+        [Test]
+        public void TestAtaqueTotalMago() // Comprueba que el ataque total de un mago sea la suma del ataque de sus items equipados + su ataque base + su libro de hechizos.
+        {
+            Mago MagoFachero = new Mago("El mago facha");
+            Item Varita = new Item("Varita", 40, 0, 0);
+            MagoFachero.AddMano1(Varita);
+            MagoFachero.EstudiarHechizo("hechizo 1");
+            double expected = 10 + Varita.Ataque + MagoFachero.LibroHechizosPoder();
+            Assert.AreEqual(expected, MagoFachero.AtaqueTotal());    
+        }
+
     }
 
 
