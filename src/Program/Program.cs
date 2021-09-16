@@ -10,7 +10,7 @@ namespace Program
             Item YelmoDeHierro = new Item("Yelmo de Hierro", 0, 30, 10);
             Item MantoDeCuero = new Item("Manto de Cuero", 10, 50, 0);
             Item ArmaduraDeCotaDeMalla = new Item("Armadura de Cota de Malla", 10, 25, 10);
-            Item GrebasDeBerserker = new Item("Grebas de Berserker"10, 10, 40);
+            Item GrebasDeBerserker = new Item("Grebas de Berserker",10, 10, 40);
             Item GuanteletesDeFuego = new Item("Guanteletes de Fuego", 40, 5, 0);
             Item VendasDeTela = new Item("Vendas de Tela", 35, 10, 5);
             Mago Mago1 = new Mago("Ryze");  
@@ -55,10 +55,10 @@ namespace Program
             Console.WriteLine(pj2.DefensaTotal() + " defensa total");
             Console.WriteLine(pj2.AtaqueTotal() + " ataque total");
           
-            Item arco = new Item("Arco", 30,10,10);
-            Item flecha = new Item("Flecha roja", 5,0,0);
-            pj2.AddMano1(arco);
-            pj2.AddMano2(flecha);
+            Item arco1 = new Item("Arco", 30,10,10);
+            Item flecha1 = new Item("Flecha roja", 5,0,0);
+            pj2.AddMano1(arco1);
+            pj2.AddMano2(flecha1);
             //Console.WriteLine(pj1.Mano1.GetItem());
             pj2.AddCasco(mascara);
             Console.WriteLine(pj2.Ataque);
@@ -68,14 +68,13 @@ namespace Program
             Item Fenix = new Item("Baculo de Fenix", 20,10,30);
             Item grimorio = new Item("Grimorio Alado", 10,0,30);
             pj32.AddMano1(Fenix);
-            pj32.Addmano2(grimorio);
             pj32.AddCasco(Mystic);
             Enano pj33 = new Enano("Dvalin");
             Item cuernos = new Item("Cuernos Forjados", 10, 30,0 );
             Item Forja = new Item("Forja del Herrero", 30,50,0);
             Item Martillo = new Item("Martillo Mitologico", 20,15,0);
             pj33.AddMano1(Forja);
-            pj33.Addmano2(Martillo);
+            pj33.AddMano2(Martillo);
             pj33.AddCasco(cuernos);
             
             Item EscudoGrande = new Item("Escudo grande", 0, 100, 0);
