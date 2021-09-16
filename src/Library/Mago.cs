@@ -16,10 +16,6 @@ namespace Program
             this.Magia = 100;
             this.Vida1 = 120;
             
-            
-PieroSaucedo
-            
-master
         }
         public ArrayList LibroHechizos = new ArrayList();
         public double LibroHechizosPoder()
