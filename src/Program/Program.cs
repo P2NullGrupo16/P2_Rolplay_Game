@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 
 namespace Program
@@ -82,7 +82,35 @@ namespace Program
             Item EspadaMortal = new Item("Espada mortal", 45, 0, 0);
             Item BotasLentas = new Item("Botas lentas", 0, 10, 0);
             Enano PersonajeEnano1 = new Enano("Lebron James");
+            
+            Mago Protagonista = new Mago("Mago Arkadian");
+            Item GorraVD= new Item("Gorra Vieja y Desgastada", 0, 10, 0);
+            Item TunicaAA = new Item("Túnica Azul de Aprendiz", 0, 10, 0);
+            Item TalismanSB = new Item("Talismán de Summoner Básico", 0, 0, 20);
+            Protagonista.AddMano1(TalismanSB);
+            Protagonista.AddCasco(GorraVD);
+            Protagonista.AddChaleco(TunicaAA);
+            Protagonista.EstudiarHechizo("Luz Sagrada");
+            Protagonista.EstudiarHechizo("Presion de Viento");
+            //Console.WriteLine(Protagonista.Ataque);
+            //Console.WriteLine(Protagonista.VerLibroHechizos());
 
+            Enano Zafrin = new Enano("Herrero Zafrin");
+            Item MartilloH = new Item("Martillo de Herrero Enano", 10, 0, 0);
+            Item ArmaduraMZ= new Item("Armadura Majestuosa de Zafrin", 20, 100, 0);
+            Item CascoGZ = new Item("Casco de Guerra de Zafrin", 5, 40, 5);
+            Item MartilloMDZ = new Item("Martillo Matadioses de Zafrin", 60, 0, 0);
+            Zafrin.AddMano1(MartilloMDZ);          
+            Zafrin.AddChaleco(ArmaduraMZ);             
+            Zafrin.AddCasco(CascoGZ);
+
+            
+            /* Enano vs Mago
+            Zafrin.AtacarMago(Protagonista);
+            Protagonista.AtacarEnano(Zafrin);
+            Console.WriteLine(Protagonista.Vida);
+            Console.WriteLine(Zafrin.Vida);
+            */
         }
     }
 }
