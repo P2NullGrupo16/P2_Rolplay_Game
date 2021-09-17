@@ -16,7 +16,10 @@ namespace Program
             this.Magia = 0;
             this.Vida1 = 200;
         }
-        
+        public string GetPersonajeInfo()
+        {
+            return $"Este personaje es un Enano llamado: {this.Nombre}\nVida: {this.Vida}\nAtaque: {this.Ataque}\nDefensa: {this.Defensa}\nMagia: {this.Magia}\nResistencia: {this.Resistencia}";
+        }
         private double vida ;
         private double armadura ;
         private Item mano1;

@@ -15,10 +15,11 @@ namespace Program
             this.Resistencia = 60;
             this.Magia = 60;
             this.Vida1 = 150;
-            
-            
         }
-                
+        public string GetPersonajeInfo()
+        {
+            return $"Este personaje es un Elfo llamado: {this.Nombre}\nVida: {this.Vida}\nAtaque: {this.Ataque}\nDefensa: {this.Defensa}\nMagia: {this.Magia}\nResistencia: {this.Resistencia}";
+        }      
         private double vida ;
         private double armadura ;
         private Item mano1;
@@ -132,6 +133,8 @@ namespace Program
             double defensaTotal = this.Defensa + this.Mano1.Defensa +  this.Armadura;
             return defensaTotal;            
         }
+
+        // el elfo es el unico personaje que puede curar, para esto utiliza 3 metodos, uno por cada raza de personajes.
         public void CurarMago(Mago otro_pj)
         {   
             this.Resistencia -= 5;

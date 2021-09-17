@@ -111,5 +111,8 @@ namespace Program
             Console.WriteLine(Zafrin.Vida);
             */
         }
+
+        /* La mayoria de las explicaciones de los razonamientos tomados por el equipo se encuentran en la clase Mago, las cuales son similares para el resto de razas.
+        A su vez, el elfo que es el unico capaz de curar tiene un comentario en su clase respectiva.*/
     }
 }
