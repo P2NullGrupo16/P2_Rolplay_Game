@@ -45,7 +45,7 @@ namespace Program
             ElfoElemental.AddCasco(CascoL);
 
 
-            //Creo al mago invencible
+            //Creo al mago todo poderoso
             Mago MagoRePolenta = new Mago("Fane the Shapeshifter");
 
             //Le doy Items para que mate a todo lo que se mueva
@@ -71,7 +71,7 @@ namespace Program
             Assert.AreEqual(MagoRePolenta.Vida, 25.0d);
 
             MuyEnano.AtacarMago(MagoRePolenta);
-            Assert.AreEqual(MagoRePolenta.Vida, 120.0d);
+            Assert.AreEqual(MagoRePolenta.Vida, -75.0d);
             
             
             //Se realizan Test para comprobar Stats de ataque luego de agregados los Items
