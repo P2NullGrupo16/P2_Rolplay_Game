@@ -18,6 +18,7 @@ namespace Program
             this.Vida1 = 120;
             
         }
+
         public string GetPersonajeInfo()        /// muestra la información del personaje, nombre, vida, etc
         {
             return $"Este personaje es un Mago llamado: {this.Nombre}\nVida: {this.Vida}\nAtaque: {this.Ataque}\nDefensa: {this.Defensa}\nMagia: {this.Magia}\nResistencia: {this.Resistencia}";

@@ -26,7 +26,7 @@ namespace Program
             MuyEnano.AddMano1(LanzaF);
             Console.WriteLine(MuyEnano.GetPersonajeInfo());
 
-            //Creo a un personaje ELfo
+            //Creo a un personaje Elfo
             Elfo ElfoElemental = new Elfo("Elfo Aprendíz del Elemento Hielo");
             //Items para el Elfo
             Item BastónElemental = new Item("Bastón Escarchado", 25, 0, 0);
@@ -40,7 +40,7 @@ namespace Program
             ElfoElemental.AddCasco(CascoL);
             Console.WriteLine(ElfoElemental.GetPersonajeInfo());
 
-            //Creo al mago invencible
+            //Creo al mago todo poderoso
             Mago MagoRePolenta = new Mago("Fane the Shapeshifter");
             //Creo Items para que mate a todo lo que se mueva
             Item VaritaOP = new Item("Death's Last Stand", 155, 10, 10);
@@ -60,7 +60,7 @@ namespace Program
             MuyEnano.RemoveChaleco();
             MuyEnano.RemoveMano1();
             Console.WriteLine(MuyEnano.GetPersonajeInfo());
-            
+
             ElfoElemental.RemoveCasco();
             ElfoElemental.RemoveBotas();
             ElfoElemental.RemoveChaleco();
@@ -72,6 +72,7 @@ namespace Program
             MagoRePolenta.RemoveChaleco();
             MagoRePolenta.RemoveMano1();
             Console.WriteLine(MagoRePolenta.GetPersonajeInfo());
+
 
         }
 
@@ -214,9 +215,6 @@ namespace Program
 
         }
         
-
-
     }
-
 
 }
