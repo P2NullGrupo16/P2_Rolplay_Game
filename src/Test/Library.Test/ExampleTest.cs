@@ -33,7 +33,7 @@ namespace Test.Library
             // equipamos al personaje con arco y flecha, y un chaleco. 
             pj2.AddMano1(arco);
             pj2.AddMano2(flecha);
-            pj2.AddChaleco(boyArmor);
+            pj2.AddChaleco(bodyArmor);
             Console.WriteLine(pj2.GetPersonajeInfo());          //muestra la descripcion del personaje
             pj2.AtacarMago(pj1);            //este personaje ataca al otro personaje que es un mago
             Console.WriteLine($"{pj1.Nombre}: {pj1.Vida} puntos de vida");
