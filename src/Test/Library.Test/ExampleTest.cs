@@ -82,6 +82,8 @@ namespace Program
 
             //MagoRePolenta.AtaqueTotal();
             Assert.AreEqual(MagoRePolenta.AtaqueTotal(), 195.0d);
+        
+        }
 
 
         [Test]
