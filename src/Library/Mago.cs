@@ -18,15 +18,13 @@ namespace Program
             this.Vida1 = 120;
             
         }
-PieroSaucedo
-
         public string GetPersonajeInfo()        /// muestra la información del personaje, nombre, vida, etc
         {
             return $"Este personaje es un Mago llamado: {this.Nombre}\nVida: {this.Vida}\nAtaque: {this.Ataque}\nDefensa: {this.Defensa}\nMagia: {this.Magia}\nResistencia: {this.Resistencia}";
         }
         public ArrayList LibroHechizos = new ArrayList();       // con ArrayList creamos un lugar donde poder almacenar los hechizos que el mago aprende
         public double LibroHechizosPoder()          //retorna el valor basico del libro de hechizos y adiciona 5 puntos de ataque y magia por cada hechizo que posea el libro.
-master
+
         {
             double poderHechizo = 30;
             foreach (string hechizo in LibroHechizos)
@@ -268,10 +266,6 @@ master
             this.RemoveMano1();
             this.Mano1 = armaNuevo;
         }
-PieroSaucedo
 
-
-
-master
     }
 }
