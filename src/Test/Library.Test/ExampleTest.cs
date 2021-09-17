@@ -9,7 +9,6 @@ namespace Program
     {
 
         [Test]
-PieroSaucedo
         public void MagoSeLaReBancaContraUnEnanoYUnElfo()
         {
             //Prueba de que un personaje puede ser atacado por otros 2 (y del mismo modo, más de 2 si así se quisiese), y además que los Items son asignados correctamente y le otorgan al Personaje lo establecido
@@ -177,7 +176,6 @@ PieroSaucedo
             ElFitoPaez.AddMano1(EspadaLarga);
             double expected = 70 + EspadaLarga.Ataque;
             Assert.AreEqual(expected, ElFitoPaez.AtaqueTotal());    
-master
         }
 
         [Test]
@@ -224,9 +222,6 @@ master
 
         }
         
-
-
     }
-
 
 }
