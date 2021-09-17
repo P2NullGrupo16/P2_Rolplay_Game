@@ -68,17 +68,21 @@ namespace Program
             //Se realizan 2 Test para ver si efectivamente el valor esperado es igual al obtenido, primero tras el ataque del primer personaje y luego tras el ataque del segundo
             
             ElfoElemental.AtacarMago(MagoRePolenta);
-            Assert.AreEqual(MagoRePolenta.Vida, -65.0d);
+            Assert.AreEqual(MagoRePolenta.Vida, 25.0d);
 
+            MuyEnano.AtacarMago(MagoRePolenta);
+            Assert.AreEqual(MagoRePolenta.Vida, 120.0d);
+            
+            
             //Se realizan Test para comprobar Stats de ataque luego de agregados los Items
             //MuyEnano.AtaqueTotal();
-            Assert.AreEqual(MuyEnano.AtaqueTotal(), 90.0d);
+            Assert.AreEqual(MuyEnano.AtaqueTotal(), 100.0d);
 
             //ElfoElemental.AtaqueTotal();
             Assert.AreEqual(ElfoElemental.AtaqueTotal(), 95.0d);
 
             //MagoRePolenta.AtaqueTotal();
-            Assert.AreEqual(MagoRePolenta.AtaqueTotal(), 195.0d);
+            Assert.AreEqual(MagoRePolenta.AtaqueTotal(), 165.0d);
         
         }
 
