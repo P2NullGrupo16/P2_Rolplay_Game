@@ -67,7 +67,7 @@ namespace Program
             
             //Se realizan 2 Test para ver si efectivamente el valor esperado es igual al obtenido, primero tras el ataque del primer personaje y luego tras el ataque del segundo
             MuyEnano.AtacarMago(MagoRePolenta);
-            double expected = 20.0d;
+            double expected = 30.0d;
             Assert.AreEqual(expected, MagoRePolenta.Vida);
             
             ElfoElemental.AtacarMago(MagoRePolenta);
