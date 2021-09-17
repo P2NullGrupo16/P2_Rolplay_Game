@@ -117,3 +117,4 @@ namespace Program
         A su vez, el elfo que es el unico capaz de curar tiene un comentario en su clase respectiva.*/
     }
 }
+
