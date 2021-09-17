@@ -42,7 +42,7 @@ namespace Program
             Console.WriteLine($"{pj2.Nombre}: " + pj2.DefensaTotal() + " defensa total");       //muestra valores totales de ataque y defensa.
             Console.WriteLine($"{pj2.Nombre}: " + pj2.AtaqueTotal() + " ataque total");
         }
-  
+        [Test]
         public void EnfrentamientoElfovsEnanoConItemsGanadorEsperadoEnano()
         //test necesario para comprobar que los metodos de agregar items y atacar funcionan correctamente
         {
