@@ -66,8 +66,8 @@ namespace Program
 
             
             //Se realizan 2 Test para ver si efectivamente el valor esperado es igual al obtenido, primero tras el ataque del primer personaje y luego tras el ataque del segundo
-            MuyEnano.AtacarMago(MagoRePolenta);
-            Assert.AreEqual(MagoRePolenta.Vida, 30.0d);
+            //MuyEnano.AtacarMago(MagoRePolenta);
+            //Assert.AreEqual(MagoRePolenta.Vida, 30.0d);
             
             ElfoElemental.AtacarMago(MagoRePolenta);
             Assert.AreEqual(MagoRePolenta.Vida, -65.0d);
