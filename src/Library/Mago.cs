@@ -18,7 +18,8 @@ namespace Program
             
             
         }
-        public ArrayList LibroHechizos = new ArrayList();
+        public ArrayList LibroHechizos = 
+        new ArrayList();
         public double LibroHechizosPoder()
         {
             double poderHechizo = 30;
@@ -214,8 +215,6 @@ namespace Program
         {
             this.Mano1 = baculo;
         }
-
-
 
 
     }
