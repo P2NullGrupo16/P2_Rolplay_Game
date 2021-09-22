@@ -9,6 +9,74 @@ namespace Program
     {
 
         [Test]
+        public void EquipamientoDeUnPersonaje()
+        {
+            //Prueba de que un Personaje puede ser equipado y des-equipado con los Items creados
+            
+            //Creo a un personaje Enano 
+            Enano MuyEnano = new Enano("Después de esta no la cuento"); //Se crea un personaje Enano
+            //Items para el Enano
+            Item LanzaF = new Item("Lanza Frágil", 10, 0, 0);
+            Item BotasC = new Item("Botas de Cuero", 0, 5, 0);
+            Item CascoM = new Item("Balde de Madera", 0, 5, 0);
+            Item CorazaC = new Item("Coraza de Escamas de Cocodrilo", 0, 10, 0);
+            MuyEnano.AddBotas(BotasC);
+            MuyEnano.AddCasco(CascoM);
+            MuyEnano.AddChaleco(CorazaC);
+            MuyEnano.AddMano1(LanzaF);
+            Console.WriteLine(MuyEnano.GetPersonajeInfo());
+
+            //Creo a un personaje Elfo
+            Elfo ElfoElemental = new Elfo("Elfo Aprendíz del Elemento Hielo");
+            //Items para el Elfo
+            Item BastónElemental = new Item("Bastón Escarchado", 25, 0, 0);
+            Item BotasT = new Item("Botas de Tela", 0, 2, 0);
+            Item ChalecoC = new Item("Chaleco de Cuero",0, 9, 0);
+            Item CascoL = new Item("Casco Ligero", 0, 10, 0);
+            //Equipo al Elfo con los Items que acabo de crear
+            ElfoElemental.AddBotas(BotasT);
+            ElfoElemental.AddMano1(BastónElemental);
+            ElfoElemental.AddChaleco(ChalecoC);
+            ElfoElemental.AddCasco(CascoL);
+            Console.WriteLine(ElfoElemental.GetPersonajeInfo());
+
+            //Creo al mago todo poderoso
+            Mago MagoRePolenta = new Mago("Fane the Shapeshifter");
+            //Creo Items para que mate a todo lo que se mueva
+            Item VaritaOP = new Item("Death's Last Stand", 155, 10, 10);
+            Item BotasOP = new Item("Boots of the Tyrant", 0, 90, 0);
+            Item ChalecoOP = new Item("Ratch Muvora", 0, 135, 0);
+            Item CascoOP = new Item("Silent Wizard Hat", 0, 95, 0);
+            //Le doy los Items 
+            MagoRePolenta.AddMano1(VaritaOP);
+            MagoRePolenta.AddCasco(CascoOP);
+            MagoRePolenta.AddBotas(BotasOP);
+            MagoRePolenta.AddChaleco(ChalecoOP);
+            Console.WriteLine(MagoRePolenta.GetPersonajeInfo());
+
+            //Le saco los items a cada personaje
+            MuyEnano.RemoveCasco();
+            MuyEnano.RemoveBotas();
+            MuyEnano.RemoveChaleco();
+            MuyEnano.RemoveMano1();
+            Console.WriteLine(MuyEnano.GetPersonajeInfo());
+
+            ElfoElemental.RemoveCasco();
+            ElfoElemental.RemoveBotas();
+            ElfoElemental.RemoveChaleco();
+            ElfoElemental.RemoveMano1();
+            Console.WriteLine(ElfoElemental.GetPersonajeInfo());
+            
+            MagoRePolenta.RemoveCasco();
+            MagoRePolenta.RemoveBotas();
+            MagoRePolenta.RemoveChaleco();
+            MagoRePolenta.RemoveMano1();
+            Console.WriteLine(MagoRePolenta.GetPersonajeInfo());
+
+
+        }
+
+        [Test]
         public void TestMetodosAtacarDerivados()  
         {
             /*Prueba que se carguen los item, y que los metodos atacar y curar funcionen bien.*/
@@ -42,7 +110,9 @@ namespace Program
             Console.WriteLine($"{pj2.Nombre}: " + pj2.DefensaTotal() + " defensa total");       //muestra valores totales de ataque y defensa.
             Console.WriteLine($"{pj2.Nombre}: " + pj2.AtaqueTotal() + " ataque total");
         }
+        
   
+        [Test]
         public void EnfrentamientoElfovsEnanoConItemsGanadorEsperadoEnano()
         //test necesario para comprobar que los metodos de agregar items y atacar funcionan correctamente
         {
@@ -98,6 +168,7 @@ namespace Program
             ElFitoPaez.AddMano1(EspadaLarga);
             double expected = 70 + EspadaLarga.Ataque;
             Assert.AreEqual(expected, ElFitoPaez.AtaqueTotal());    
+
         }
 
         [Test]
@@ -109,10 +180,41 @@ namespace Program
             MagoFachero.EstudiarHechizo("hechizo 1");
             double expected = 10 + Varita.Ataque + MagoFachero.LibroHechizosPoder();
             Assert.AreEqual(expected, MagoFachero.AtaqueTotal());    
+        }  
+        [Test]
+        public void enanoSeLaDaAMagoYElfoHelea()
+        {
+            Mago pj32 = new Mago("Phanilorh");
+            Item Mystic = new Item("Gorro Mistico", 5, 10,15 );
+            Item Fenix = new Item("Baculo de Fenix", 20,10,30); 
+            pj32.AddMano1(Fenix);
+            pj32.AddCasco(Mystic);
+            
+            Enano pj33 = new Enano("Dvalin");
+            Item cuernos = new Item("Cuernos Forjados", 10, 30,0 );
+            Item Forja = new Item("Forja del Herrero", 30,50,0);
+            Item Martillo = new Item("Martillo Mitologico", 20,15,0);
+            pj33.AddMano1(Forja);
+            pj33.AddMano2(Martillo);
+            pj33.AddCasco(cuernos);
+
+            Elfo pj34 = new Elfo("Galardiel");
+            Item SombreroSanador = new Item("Sombrero Sanador", 10, 30,20);
+            Item BáculoCurandero = new Item("La Mano de Dios", 30,10,40);
+            Item BotasRápidas = new Item("Flash un Poroto", 0,30,10);
+            pj33.AddMano1(BáculoCurandero);
+            pj33.AddBotas(BotasRápidas);
+            pj33.AddCasco(SombreroSanador);
+            /* luego de crear los personajes y asignar los items 
+            realizamos un testeo del código probando un atq y curando al personaje atacado*/
+
+            pj33.AtacarMago(pj32);
+            Assert.AreEqual(pj32.Vida, -50 ); 
+            pj34.CurarMago(pj32);
+            Assert.AreEqual(pj32.Vida, pj32.Vida ); // el elfo cura y vuelve a la vida inicial del pj
 
         }
-
+        
     }
-
 
 }
