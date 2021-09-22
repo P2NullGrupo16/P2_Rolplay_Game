@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 
 namespace Program
@@ -38,6 +38,7 @@ namespace Program
             pj1.RemoveMano1();
             pj1.ChangeMano1(baston);
             Console.WriteLine(pj1.Magia + " magia sin baculo");
+            Console.WriteLine(pj1.GetPersonajeInfo());
 
 
             Elfo pj2 = new Elfo("Juan");
@@ -63,12 +64,15 @@ namespace Program
             pj2.AddCasco(mascara);
             Console.WriteLine(pj2.Ataque);
             Console.WriteLine(pj2.Armadura);
+            Console.WriteLine(pj2.GetPersonajeInfo());
+
             Mago pj32 = new Mago("Phanilorh");
             Item Mystic = new Item("Gorro Mistico", 5, 10,15 );
             Item Fenix = new Item("Baculo de Fenix", 20,10,30);
             Item grimorio = new Item("Grimorio Alado", 10,0,30);
             pj32.AddMano1(Fenix);
             pj32.AddCasco(Mystic);
+            Console.WriteLine(pj32.GetPersonajeInfo());
             Enano pj33 = new Enano("Dvalin");
             Item cuernos = new Item("Cuernos Forjados", 10, 30,0 );
             Item Forja = new Item("Forja del Herrero", 30,50,0);
@@ -76,11 +80,13 @@ namespace Program
             pj33.AddMano1(Forja);
             pj33.AddMano2(Martillo);
             pj33.AddCasco(cuernos);
+            Console.WriteLine(pj33.GetPersonajeInfo());
             
             Item EscudoGrande = new Item("Escudo grande", 0, 100, 0);
             Item EspadaMortal = new Item("Espada mortal", 45, 0, 0);
             Item BotasLentas = new Item("Botas lentas", 0, 10, 0);
             Enano PersonajeEnano1 = new Enano("Lebron James");
+            Console.WriteLine(PersonajeEnano1.GetPersonajeInfo());
             
             Mago Protagonista = new Mago("Mago Arkadian");
             Item GorraVD= new Item("Gorra Vieja y Desgastada", 0, 10, 0);
@@ -93,6 +99,7 @@ namespace Program
             Protagonista.EstudiarHechizo("Presion de Viento");
             //Console.WriteLine(Protagonista.Ataque);
             //Console.WriteLine(Protagonista.VerLibroHechizos());
+            Console.WriteLine(Protagonista.GetPersonajeInfo());
 
             Enano Zafrin = new Enano("Herrero Zafrin");
             Item MartilloH = new Item("Martillo de Herrero Enano", 10, 0, 0);
@@ -102,6 +109,7 @@ namespace Program
             Zafrin.AddMano1(MartilloMDZ);          
             Zafrin.AddChaleco(ArmaduraMZ);             
             Zafrin.AddCasco(CascoGZ);
+            Console.WriteLine(Zafrin.GetPersonajeInfo());
 
             
             /* Enano vs Mago
