@@ -6,7 +6,8 @@ namespace Program
     class Program
     {
         static void Main(string[] args)
-        {        
+        {     
+             
             Item YelmoDeHierro = new Item("Yelmo de Hierro", 0, 30, 10);
             Item MantoDeCuero = new Item("Manto de Cuero", 10, 50, 0);
             Item ArmaduraDeCotaDeMalla = new Item("Armadura de Cota de Malla", 10, 25, 10);
@@ -39,6 +40,8 @@ namespace Program
             pj1.ChangeMano1(baston);
             Console.WriteLine(pj1.Magia + " magia sin baculo");
             Console.WriteLine(pj1.GetPersonajeInfo());
+            
+            
 
 
             Elfo pj2 = new Elfo("Juan");
@@ -49,12 +52,13 @@ namespace Program
             pj2.AddMano2(flecha);
             Console.WriteLine(pj1.Mano1.GetItem());
             pj2.AddCasco(mascara);
-            pj2.AtacarMago(pj1);
+            pj2.Atacar(pj1);
             Console.WriteLine($"{pj1.Vida} puntos de vida");
             pj2.CurarMago(pj1);
             Console.WriteLine(pj2.Ataque);
             Console.WriteLine(pj2.DefensaTotal() + " defensa total");
             Console.WriteLine(pj2.AtaqueTotal() + " ataque total");
+            
           
             Item arco1 = new Item("Arco", 30,10,10);
             Item flecha1 = new Item("Flecha roja", 5,0,0);
@@ -65,6 +69,8 @@ namespace Program
             Console.WriteLine(pj2.Ataque);
             Console.WriteLine(pj2.Armadura);
             Console.WriteLine(pj2.GetPersonajeInfo());
+            
+            
 
             Mago pj32 = new Mago("Phanilorh");
             Item Mystic = new Item("Gorro Mistico", 5, 10,15 );
@@ -100,6 +106,9 @@ namespace Program
             //Console.WriteLine(Protagonista.Ataque);
             //Console.WriteLine(Protagonista.VerLibroHechizos());
             Console.WriteLine(Protagonista.GetPersonajeInfo());
+            
+
+            
 
             Enano Zafrin = new Enano("Herrero Zafrin");
             Item MartilloH = new Item("Martillo de Herrero Enano", 10, 0, 0);
@@ -110,14 +119,18 @@ namespace Program
             Zafrin.AddChaleco(ArmaduraMZ);             
             Zafrin.AddCasco(CascoGZ);
             Console.WriteLine(Zafrin.GetPersonajeInfo());
+            
+            
+            
 
             
             /* Enano vs Mago
-            Zafrin.AtacarMago(Protagonista);
-            Protagonista.AtacarEnano(Zafrin);
+            Zafrin.Atacar(Protagonista);
+            Protagonista.Atacar(Zafrin);
             Console.WriteLine(Protagonista.Vida);
             Console.WriteLine(Zafrin.Vida);
             */
+            
         }
 
         /* La mayoria de las explicaciones de los razonamientos tomados por el equipo se encuentran en la clase Mago, las cuales son similares para el resto de razas.

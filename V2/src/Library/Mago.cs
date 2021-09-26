@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Program
 {
-    public class Mago
+    public class Mago: IPersonaje
     {
         public Mago(string nombre)
         {
@@ -137,27 +137,14 @@ namespace Program
             double defensaTotal = this.Defensa +  this.Armadura;            
             return defensaTotal;            
         }
-        public void AtacarMago(Mago otro_pj)            // para los metodos de atacar necesitamos crear uno por cada raza de personaje.
+        public void Atacar(IPersonaje otro_pj)            // para los metodos de atacar necesitamos crear uno por cada raza de personaje.
         {   
             this.Resistencia -= 10;
             this.Magia -= 15;
             otro_pj.Vida -= this.AtaqueTotal();
             Console.WriteLine($"Se restaron {this.AtaqueTotal()} puntos a la vida de {otro_pj.Nombre}");
         }
-        public void AtacarEnano(Enano otro_pj)
-        {   
-            this.Resistencia -= 10;
-            this.Magia -= 15;
-            otro_pj.Vida -= this.AtaqueTotal();
-            Console.WriteLine($"Se restaron {this.AtaqueTotal()} puntos a la vida de {otro_pj.Nombre}");
-        }
-        public void AtacarElfo(Elfo otro_pj)
-        {   
-            this.Resistencia -= 10;
-            this.Magia -= 15;
-            otro_pj.Vida -= this.AtaqueTotal();
-            Console.WriteLine($"Se restaron {this.AtaqueTotal()} puntos a la vida de {otro_pj.Nombre}");
-        }
+        
         // el mago puede: aprender hechizos, olvidar hechizos y ver el contenido del libro de hechizos.
         public void EstudiarHechizo(string hechizo)
         {

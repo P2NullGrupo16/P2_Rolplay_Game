@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Program
 {
-    public class Elfo
+    public class Elfo: IPersonaje
     {
         public Elfo(string nombre)
         {
@@ -157,27 +157,15 @@ namespace Program
             Console.WriteLine($"Se restablecieron los puntos de vida de {otro_pj.Nombre}");
         }
         
-        public void AtacarMago(Mago otro_pj)
+        public void Atacar(IPersonaje otro_pj)
         {   
             this.Resistencia -= 10;
             this.Magia -= 15;
             otro_pj.Vida -= this.AtaqueTotal();
             Console.WriteLine($"Se restaron {this.AtaqueTotal()} puntos a la vida de {otro_pj.Nombre}");
         }
-        public void AtacarEnano(Enano otro_pj)
-        {   
-            this.Resistencia -= 10;
-            this.Magia -= 15;
-            otro_pj.Vida -= this.AtaqueTotal();
-            Console.WriteLine($"Se restaron {this.AtaqueTotal()} puntos a la vida de {otro_pj.Nombre}");
-        }
-        public void AtacarElfo(Elfo otro_pj)
-        {   
-            this.Resistencia -= 10;
-            this.Magia -= 15;
-            otro_pj.Vida -= this.AtaqueTotal();
-            Console.WriteLine($"Se restaron {this.AtaqueTotal()} puntos a la vida de {otro_pj.Nombre}");
-        }
+        //borre metodos atacar
+        
         public void AddCasco(Item casco)
         {
             this.Casco = casco;

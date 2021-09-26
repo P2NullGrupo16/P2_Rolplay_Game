@@ -35,7 +35,7 @@ namespace Program
             pj2.AddMano2(flecha);
             pj2.AddChaleco(bodyArmor);
             Console.WriteLine(pj2.GetPersonajeInfo());          //muestra la descripcion del personaje
-            pj2.AtacarMago(pj1);            //este personaje ataca al otro personaje que es un mago
+            pj2.Atacar(pj1);            //este personaje ataca al otro personaje que es un mago
             Console.WriteLine($"{pj1.Nombre}: {pj1.Vida} puntos de vida");
             pj2.CurarMago(pj1);             //restablecemos los puntos de vida del personaje atacado
             Console.WriteLine($"{pj1.Nombre}: {pj1.Vida} puntos de vida");
@@ -71,8 +71,8 @@ namespace Program
             Y el Enano Tomatoide, el cual en total debería contar con 200 de vida, 38 de defensa y 115 de ataque
             Según estos datos, el enfrentamiento debería culminar con el elfo muriendo luego de dos ataques*/
 
-            grrr.AtacarElfo(mesias);
-            grrr.AtacarElfo(mesias);
+            grrr.Atacar(mesias);
+            grrr.Atacar(mesias);
 
             Assert.AreEqual(mesias.Vida, -80);
             Assert.AreEqual(grrr.Vida, 200.0d);
